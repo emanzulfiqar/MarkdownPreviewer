@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+/*   background:#ccc; */
+  background-color: #35373a;
+  font-family:Quicksand;
+  color:#fff;
+}
+/*header*/
+header{
+    display: block;
+    font-size: 1rem;
+    margin-block-start: 0.67rem;
+    margin-block-end: 0.67rem;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-bottom:0;
+}
+.h1{
+  font-size:3rem;
+  font-weight:900;
+}
+/*whole page*/
+.main-container {
+    background-color: #35373a;
+    display: -webkit-flex;
+/*     display: flex; */
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+}
+/*Input and Preview windows*/
+.windows-container {
+    display: -webkit-flex;
+/*     display: flex; */
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1600px;
+}
+
+@media only screen and (max-width: 700px) {
+  .windows-container {
+    flex-direction: column;
+    /* lets us pass content block into mixin */
+  }
+}
+/*Each window*/
+.flexitem {
+    display: -webkit-flex;
+/*     display: flex; */
+    -webkit-flex-flow: column;
+    flex-flow: column;
+    -webkit-flex-basis: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 0.5em 0.75em;
+    height:100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .flexitem {
+    max-width: 100%;
+    max-height: 50%;
+    /* lets us pass content block into mixin */
+  }
+}
+/*Input and Preview window headings*/
+.bar {
+    background-color: #ee7d3c;
+    border: solid #ee7d3c;
+    border-width: 1px 1px 0;
+    border-radius: 0.625em 0.625em 0 0;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .bar {
+    font-size: 1.1rem;
+    /* lets us pass content block into mixin */
+  }
+}
+/*editor*/
+.editor{
+  font-family:monospace;
+}
+/*editor and preview inner page*/
+.editor,
+.preview {
+  background-color: #3b3d41;
+  color: #fff;
+  border: 1px solid #ee7d3c;
+  height: 100%;
+  overflow: auto;
+  /* enables scrollbar */
+  padding: 1rem;
+  resize: none;
+  /* prevents resizing of textarea box */
+}
+/*editor and preview inner page css when focused*/
+.editor:focus-within,
+.preview:focus-within {
+  outline: none;
+  border-color: #fff;
+  color:#fff;
+  background:#3b3d41;
+  box-shadow:none;
+}
+.editor:active{
+  outline:none;
+}
+
+/* .form-control,.preview{
+/*   height:100%; */
+  /*color:#fff;
+  background-color:#35373a;
+  border:1px solid #fff;
+} */
+
+/*CSS inside Preview Window*/
+img{
+  max-width:100%;
+}
+
+
+a {
+  color: #ff9555;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #b45922;
+}
+
+/*   &:hover,
+  &:focus {
+/*     color: #b45922; 
+    color:black;
+  } */
+
+
+code, pre {
+  white-space: pre-wrap;
+  background-color: #35373a;
+  padding: 0 0.1em;
+}
+
+pre {
+  /* pre wraps code elements to create a codeblock */
+  margin: 1em 0;
+  padding: 0.7em;
+}
+
+ul {
+  padding-left: 1.875em;
+  /* reapply margin to li elements */
+}
+
+blockquote {
+  margin: 1em 40px;
+  border-left: 2px solid #ee7d3c;
+}
+
+blockquote p {
+  margin-left: 0.625em;
+}
+
+.preview {
+  overflow-wrap: break-word;
+  /* forces long words to wrap */
+}
+
+.preview p {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+
+.preview h1 {
+  margin: 0.25em 0;
+  padding-bottom: 0.2em;
+  border-bottom: 2px solid #fff;
+}
+
+@media only screen and (max-width: 700px) {
+  .preview h1 {
+    font-size: 1.7rem;
+    /* lets us pass content block into mixin */
+  }
+}
+
+.preview h2 {
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+}
+
+.preview h3 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.preview h4 {
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+}
+
+.preview h5 {
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+}
+
+.preview h6 {
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+}
+
+table {
+  border-collapse: collapse;
+  /* removes gaps between cells */
+}
+
+td,
+th {
+  border: 1px solid #ee7d3c;
+  padding: 2px 5px;
+}
+
+
+/*Scrollbar*/
+::-webkit-scrollbar{
+  width:10px;
+}
+::-webkit-scrollbar-track{
+  border:1px solid rgba(100,100,100,0.4);
+  box-shadow:inset 0 0 5px grey;
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color:#000;
+  border-radius:10px;
+}
